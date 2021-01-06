@@ -1,0 +1,34 @@
+<?php
+// core configuration
+include_once 'config/core.php';
+
+// connect to database
+include_once 'config/database.php';
+
+// include objects and classes
+include_once 'objects/cart_item.php';
+
+// get database connection
+$database = new Database();
+$db = $database->getConnection();
+
+// initialize objects
+$cart_item = new CartItem($db);
+
+// get the product id
+$id = isset($_GET['id']) ? $_GET['id'] : "";
+$name = isset($_GET['name']) ? $_GET['name'] : "";
+
+//create the id and user_id for SQL method
+$cart_item->product_id=$id;
+$cart_item->user_id=$_SESSION['user_id'];
+
+if($cart_item->delete()){
+	// redirect to product list and tell the user it was removed from cart
+	header("Location: {$home_url}cart.php?action=removed&id={$id}&name={$name}");
+}
+
+else{
+	header("Location: {$home_url}cart.php?action=remove_failed&id={$id}&name={$name}");
+}
+?>

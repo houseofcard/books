@@ -1,0 +1,54 @@
+Hi DEV!
+
+Thanks for downloading our source code!
+
+*** Source code simple set up when you install:
+
+1. Extract the ZIP file to your server directory.
+
+2. In your PhpMyAdmin, create a database “shop_cart_module”
+
+3. Import the “shop_cart_module.sql” SQL file in the “dev” folder
+
+4. Change rewrite base directory in line 7 of .htaccess file (if needed)
+
+5. Change $home_url in /config/core.php (if needed)
+
+6. Configure database in /config/database.php
+
+7. Run product.php – this is the main file, not index.php
+
+8. User Login
+Admin Section Login
+Username: mike@example.com
+Password: ninja12qw!@QW
+
+Customer Account Login
+Username: darwin@example.com
+Password: darwin12qw!@QW
+
+*** How To Make TinyMCE File Manager / File Browser Work?
+
+1. Change line 71 of /libs/js/responsive_filemanager/filemanager/config/config.php
+
+'upload_dir' => '/YOUR_ROOT_DIRECTORY/libs/js/responsive_filemanager/source/',
+2. Change line 42-43 of /admin/layout_foot.php
+
+external_filemanager_path:"/YOUR_ROOT_DIRECTORY/libs/js/responsive_filemanager/filemanager/",
+external_plugins: { "filemanager" : "/YOUR_ROOT_DIRECTORY/libs/js/responsive_filemanager/filemanager/plugin.min.js"},
+
+
+*** IMPORTANT NOTE:
+
+Please DO NOT overwrite your current installation, your project's current files and database. This is because all changes you made will disappear.
+
+The new source code update will be just a reference. It will help you study, compare and apply the new features - if you need it. Our code is designed to be as simple as possible so you can apply it on your project. If you do not understand something, just contact me.
+
+**** Contact me if you have any questions about the code, I’ll be more than happy to help and support you!
+
+My email is mike@codeofaninja.com, you can also contact me via our official Facebook page fb.com/codeofaninja.
+
+Kind Regards,
+Mike Dalisay
+Software Developer
+Founder and Author, codeofaninja.com
